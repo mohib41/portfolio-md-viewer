@@ -25,15 +25,11 @@ export default function Home() {
             className="ml-4 bg-gray-300 dark:bg-gray-700 p-2 rounded-full shadow text-sm hover:scale-105 transition"
             title="Toggle Theme"
           >
-            {theme === "dark" ? "🌞" : "🌙"}
+            {theme === "dark" ? "Light" : "Dark"}
           </button>
         )}
       </div>
 
-      {/* Tailwind test box */}
-      <div className="bg-green-500 text-white p-2 rounded text-center mb-6 shadow-md">
-        ✅ Tailwind & Theme Toggle Working!
-      </div>
 
       {/* Two-column layout */}
       <div className="flex flex-row gap-6 h-[85vh]">
@@ -80,7 +76,7 @@ export default function Home() {
         </p>
         <p className="mt-1">
           <a
-            href="https://github.com/mkskd41/portfolio-md-viewer.git"
+            href="https://github.com/mohib41/portfolio-md-viewer.git"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 dark:text-blue-400 hover:underline"
