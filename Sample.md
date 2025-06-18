@@ -19,7 +19,7 @@ I'm a full-stack developer passionate about building products that solve real pr
 ### 🌟 Portfolio Website  
 A personal website to showcase my work, skills, and blog posts.  
 **Tech:** Next.js, Tailwind CSS  
-[GitHub Repo](https://github.com/janedoe/portfolio)
+[GitHub Repo](https://github.com/mohib41/portfolio-md-viewer)
 
 ---
 
