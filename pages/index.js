@@ -57,26 +57,6 @@ export default function Home() {
         <div className="w-1/2 bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-300 dark:border-gray-600 flex flex-col">
           <h2 className="text-2xl font-semibold mb-4 text-center">Write Markdown</h2>
 
-          {/* File upload */}
-          <label className="mb-2 text-sm font-medium">📁 Upload Markdown File</label>
-          <input
-            type="file"
-            accept=".md"
-            onChange={(e) => {
-              const file = e.target.files[0];
-              setFileName(file?.name || "");
-              const reader = new FileReader();
-              reader.onload = (event) => setMarkdown(event.target.result);
-              if (file) reader.readAsText(file);
-            }}
-            className="mb-2 p-2 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-gray-700 text-sm"
-          />
-          {fileName && (
-            <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
-              📄 Loaded: {fileName}
-            </p>
-          )}
-
           {/* Markdown textarea */}
           <textarea
             className="flex-1 p-4 rounded bg-gray-100 dark:bg-gray-700 dark:text-white border border-gray-400 dark:border-gray-600 resize-none font-mono"
@@ -92,13 +72,6 @@ export default function Home() {
           >
             🚀 Generate Portfolio
           </button>
-
-          <button
-            onClick={exportToHtml}
-            className="mt-2 py-2 px-4 text-sm font-medium rounded bg-blue-600 hover:bg-blue-700 text-white shadow-md"
-          >
-            💾 Export as HTML
-          </button>
         </div>
       </div>
 
@@ -109,7 +82,7 @@ export default function Home() {
         </p>
         <p className="mt-1">
           <a
-            href="https://github.com/mkskd41/portfolio-md-viewer"
+            href="https://github.com/mohib41/portfolio-md-viewer.git"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 dark:text-blue-400 hover:underline"
