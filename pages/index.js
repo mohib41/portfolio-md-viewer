@@ -5,7 +5,6 @@ import { useTheme } from "next-themes";
 export default function Home() {
   const [markdown, setMarkdown] = useState("");
   const [showPreview, setShowPreview] = useState(false);
-  const [fileName, setFileName] = useState("");
   const [mounted, setMounted] = useState(false);
 
   const { theme, setTheme } = useTheme();
@@ -13,14 +12,6 @@ export default function Home() {
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  const exportToHtml = () => {
-    const blob = new Blob([markdown], { type: "text/html" });
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "portfolio.html";
-    link.click();
-  };
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-white text-gray-900 dark:bg-gray-900 dark:text-white px-4 py-10">
@@ -34,9 +25,14 @@ export default function Home() {
             className="ml-4 bg-gray-300 dark:bg-gray-700 p-2 rounded-full shadow text-sm hover:scale-105 transition"
             title="Toggle Theme"
           >
-            {theme === "dark" ? "Light" : "Dark"}
+            {theme === "dark" ? "🌞" : "🌙"}
           </button>
         )}
+      </div>
+
+      {/* Tailwind test box */}
+      <div className="bg-green-500 text-white p-2 rounded text-center mb-6 shadow-md">
+        ✅ Tailwind & Theme Toggle Working!
       </div>
 
       {/* Two-column layout */}
@@ -48,7 +44,9 @@ export default function Home() {
             {showPreview ? (
               <Markdown>{markdown}</Markdown>
             ) : (
-              <p className="text-yellow-500 text-center"> Click "Generate" to see preview.</p>
+              <p className="text-yellow-500 text-center">
+                ⚠️ Click &quot;Generate&quot; to see preview.
+              </p>
             )}
           </div>
         </div>
@@ -65,7 +63,7 @@ export default function Home() {
             placeholder="Type Markdown here..."
           />
 
-          {/* Generate & Export Buttons */}
+          {/* Generate Button */}
           <button
             onClick={() => setShowPreview(true)}
             className="mt-6 py-3 px-6 text-lg font-bold rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white shadow-lg transition-all duration-300"
@@ -82,7 +80,7 @@ export default function Home() {
         </p>
         <p className="mt-1">
           <a
-            href="https://github.com/mohib41/portfolio-md-viewer.git"
+            href="https://github.com/mkskd41/portfolio-md-viewer.git"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 dark:text-blue-400 hover:underline"
